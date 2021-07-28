@@ -11,11 +11,16 @@
     $salto = '</br>';
 
 
+    
+
+
     echo 'Bienvenido ' .  $nombre . $salto;
     echo 'Password jeje: ' .  $pass . $salto;
     echo 'Comentarios ' .  $comentarios . $salto;
     echo 'Idioma ' .  $idioma . $salto;
     echo 'Estado ' .  $estado . $salto;
+
+
 
     foreach( $pasatiempos as $pasatiempo ){
         echo 'Pasatiempo ' .  $pasatiempo . $salto;
