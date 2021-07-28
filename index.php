@@ -1,16 +1,7 @@
 <?php
 
-/* Se oculta los demas archivos para evitar demasiadas salidas a pantalla
 
-require('global.php');
 
-require('list.php');
-
-require('funciones.php');  
-
-require('strict.php');*/
-
-require('anonimas.php');
 
 ?>
 
@@ -54,7 +45,42 @@ require('anonimas.php');
     <header>
 
 
-        <h1><?php echo 'Hola mundo' ?></h1>
+        <section class="fila">
+
+            <div class="contenedor1">
+
+
+                <form action="validar.php" method="POST" class="col-full-12">
+
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" id="nombre">
+
+                    <label for="pass">Password</label>s
+                    <input type="text" name="pass" id="pass">
+                    <label for="pass">Comentarios</label>
+                    <textarea name="comentarios" id="comentarios"></textarea>
+
+                    <select id="idioma" name="idioma">
+
+                        <option value="es">Español</option>
+                        <option value="in">Ingles</option>
+                        <option value="ja">Japones</option>
+
+                    </select  >
+
+                    <input type="radio" name="estado" id="casado" value="casado">
+                    <input type="radio" name="estado" id="soltero" value="soltero">
+                    <input type="radio" name="estado" id="viudo" value="viudo">
+
+                    <input type="submit" value="Enviar datos">
+
+
+                </form>
+
+
+            </div>
+
+        </section>
 
 
     </header>
