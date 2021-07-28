@@ -66,11 +66,28 @@
                         <option value="in">Ingles</option>
                         <option value="ja">Japones</option>
 
-                    </select  >
+                    </select>
 
                     <input type="radio" name="estado" id="casado" value="casado">
                     <input type="radio" name="estado" id="soltero" value="soltero">
                     <input type="radio" name="estado" id="viudo" value="viudo">
+
+                    <label for=""> <input type="checkbox" name="hobbies[]" value="leer" id="leer"> Leer</label>
+                    <label for=""> <input type="checkbox" name="hobbies[]" value="programar" id="programar"> programar</label>
+                    <label for=""> <input type="checkbox" name="hobbies[]" value="musica" id="musica"> musica</label>
+                    <label for=""> <input type="checkbox" name="hobbies[]" value="peliculas" id="peliculas"> peliculas</label>
+
+
+                    <select multiple="multiple" name="comidas[]" >
+
+                        <option value="pastel">Pastel</option>
+                        <option value="cereal">cereal</option>
+                        <option value="bistek">bistek</option>
+                        <option value="pescado">pescado</option>
+                        <option value="pollo">pollo</option>
+
+
+                    </select>
 
                     <input type="submit" value="Enviar datos">
 
