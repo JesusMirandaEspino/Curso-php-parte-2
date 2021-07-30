@@ -11,25 +11,51 @@
     $salto = '</br>';
 
 
-    
+    $error = [];
 
+    if( $nombre === '' ){
+        array_push($error, '<p>' .  'Por favor escribe el nombre'  . '</p>'   ) ;
 
-    echo 'Bienvenido ' .  $nombre . $salto;
-    echo 'Password jeje: ' .  $pass . $salto;
-    echo 'Comentarios ' .  $comentarios . $salto;
-    echo 'Idioma ' .  $idioma . $salto;
-    echo 'Estado ' .  $estado . $salto;
-
-
-
-    foreach( $pasatiempos as $pasatiempo ){
-        echo 'Pasatiempo ' .  $pasatiempo . $salto;
-    }
-
-    foreach ($comidas as $comida) {
-        echo 'Comida: ' .  $comida . $salto;
     }
     
+    if($pass === '' ){
+        array_push($error, '<p>' .  'Por favor escribe la clave'  . '</p>');
+
+    }
+    
+    if ($comentarios === '') {
+    array_push($error, '<p>' .  'Por favor escribe los comentarios'  . '</p>');
+
+    }
+
+    if( count( $error ) > 0 ){
+
+        foreach( $error as $err ){
+            echo '<p>'.  $err .   '</p>';
+        }
+
+    }else{
+
+        echo 'Bienvenido ' .  $nombre . $salto;
+        echo 'Password jeje: ' .  $pass . $salto;
+        echo 'Comentarios ' .  $comentarios . $salto;
+        echo 'Idioma ' .  $idioma . $salto;
+        echo 'Estado ' .  $estado . $salto;
+
+
+
+        foreach( $pasatiempos as $pasatiempo ){
+            echo 'Pasatiempo ' .  $pasatiempo . $salto;
+        }
+
+        foreach ($comidas as $comida) {
+            echo 'Comida: ' .  $comida . $salto;
+        }
+    }
+    
+
 
 
 ?>
+
+
