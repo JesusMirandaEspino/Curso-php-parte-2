@@ -12,6 +12,26 @@ if( isset($_GET['animal']) ){
 }
 
 
+
+$t = time();
+
+$fecha = date( 'd/m/Y', $t );
+$hora = date( 'h:i:s', $t );
+$dia = date( 'l', $t );
+$diames = date('j', $t);
+$mes = date('F', $t);
+$year = date('Y', $t);
+$hora = date('H', $t);
+
+echo $t;
+
+echo '<p>' .  $fecha .  '</p>';
+echo '<p>' .  $hora .  '</p>';
+echo '<p>' .  $dia .  '</p>';
+echo '<p>' .  $diames .  '</p>';
+echo '<p>' .  $mes .  '</p>';
+echo '<p>' .  $hora .  '</p>';
+echo '<p>' .  $year .  '</p>';
 ?>
 
 
@@ -61,6 +81,10 @@ if( isset($_GET['animal']) ){
             <input type="radio" name="animal" id="perro" value="perro"> <label for="perro">Perro</label>
             <input type="radio" name="animal" id="gato" value="gato"> <label for="gato">Gato</label>
             <input type="submit" value="Enviar">
+
+
+
+
 
 
         </form>
