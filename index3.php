@@ -1,7 +1,7 @@
 <?php
 
 
-if (isset($_POST['bandera'])) {
+if(isset($_POST['nombre'] ) ){
 
     $nombre = $_POST['nombre'];
     $pass = $_POST['pass'];
@@ -28,11 +28,36 @@ if (isset($_POST['bandera'])) {
         array_push($error, '<p>' .  'Por favor escribe los comentarios'  . '</p>');
     }
 
-    if (isset($pasatiempos)) {
-        if(count($pasatiempos) == 0) {
+    if( isset($pasatiempos ) ){
+        if( count($pasatiempos) == 0 ){
             array_push($error, '<p>' .  'Por escoge algun pasatiempo'  . '</p>');
         }
     }
+
+    if (count($error) > 0) {
+
+        foreach ($error as $err) {
+            echo '<p>' .  $err .   '</p>';
+        }
+    } else {
+
+        echo 'Bienvenido ' .  $nombre . $salto;
+        echo 'Password jeje: ' .  $pass . $salto;
+        echo 'Comentarios ' .  $comentarios . $salto;
+        echo 'Idioma ' .  $idioma . $salto;
+        echo 'Estado ' .  $estado . $salto;
+
+
+
+        foreach ($pasatiempos as $pasatiempo) {
+            echo 'Pasatiempo ' .  $pasatiempo . $salto;
+        }
+
+        foreach ($comidas as $comida) {
+            echo 'Comida: ' .  $comida . $salto;
+        }
+    }
+    
 
 
 }
@@ -76,35 +101,6 @@ if (isset($_POST['bandera'])) {
 
 <body>
 
-    <?php
-
-    if (count($error) > 0) {
-
-        foreach ($error as $err) {
-            echo '<p>' .  $err .   '</p>';
-        }
-    } elseif(isset($_POST['bandera'])) {
-
-        echo 'Bienvenido ' .  $nombre . $salto;
-        echo 'Password jeje: ' .  $pass . $salto;
-        echo 'Comentarios ' .  $comentarios . $salto;
-        echo 'Idioma ' .  $idioma . $salto;
-        echo 'Estado ' .  $estado . $salto;
-
-
-
-        foreach ($pasatiempos as $pasatiempo) {
-            echo 'Pasatiempo ' .  $pasatiempo . $salto;
-        }
-
-        foreach ($comidas as $comida) {
-            echo 'Comida: ' .  $comida . $salto;
-        }
-    }else{
-
-    ?>
-
-
     <!-- **************************  -->
     <!-- **************************  -->
     <header>
@@ -143,7 +139,7 @@ if (isset($_POST['bandera'])) {
                     <label for=""> <input type="checkbox" name="hobbies[]" value="peliculas" id="peliculas"> peliculas</label>
 
 
-                    <select multiple="multiple" name="comidas[]">
+                    <select multiple="multiple" name="comidas[]" >
 
                         <option value="pastel">Pastel</option>
                         <option value="cereal">cereal</option>
@@ -154,25 +150,15 @@ if (isset($_POST['bandera'])) {
 
                     </select>
 
-                    <input type="hidder" name="bandera" id="bandera" value="bandera">
                     <input type="submit" value="Enviar datos">
 
 
                 </form>
 
 
-
-
-
             </div>
 
         </section>
-
-
-        <?php 
-        }
-        
-        ?>
 
 
     </header>
