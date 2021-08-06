@@ -1,5 +1,17 @@
 <?php
 
+$fechaInicial = '2015-05-16';
+$fechaFinal = date('Y/d/m');
+
+
+function diferenciaFechas( $fechaInicial, $fechaFinal ){
+    $dias = ( strtotime( $fechaFinal ) - strtotime( $fechaInicial ) / ( 60*60*24) );
+    $dias = abs( $dias );
+    $dias = floor( $dias );
+    echo $dias;
+}
+
+
 date_default_timezone_set( 'America/Mexico_City' );
 
 echo date( 'D, d M Y H:i:s' );
@@ -21,6 +33,9 @@ function calcularEdad( $fecha ){
 echo '*******************';
 
 echo 'tu edad es de: ' . calcularEdad( '2001-05-01' );
+
+
+echo '**************************//*****';
 
 ?>
 
