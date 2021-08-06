@@ -37,6 +37,28 @@ echo 'tu edad es de: ' . calcularEdad( '2001-05-01' );
 
 echo '**************************//*****';
 
+
+
+
+
+$monto = 1500;
+$tasaIVA = 0.16;
+$montoIVA = $monto * $tasaIVA ;
+$granTotal = $monto + $montoIVA;
+
+
+$retISR = 0.1;
+$retIVA = 0.16667;
+
+$montoRetIVA = $granTotal * $retIVA;
+$montoRetISR = $granTotal * $retISR;
+
+$total = ($granTotal - $montoRetIVA) - $montoRetISR;
+
+
+printf( "<p>Monto: $%6.2f</p>", $total );
+
+
 ?>
 
 
