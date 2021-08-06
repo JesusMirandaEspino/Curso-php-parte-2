@@ -4,6 +4,23 @@ date_default_timezone_set( 'America/Mexico_City' );
 
 echo date( 'D, d M Y H:i:s' );
 
+echo '-----------';
+
+echo strtotime( 'now' );
+
+
+function calcularEdad( $fecha ){
+
+    list( $Y, $m, $d ) = explode( '-', $fecha );
+
+    return ( date(  'md' )<$m.$d? date('Y')-$Y-1 : date('Y')-$Y);
+
+}
+
+
+echo '*******************';
+
+echo 'tu edad es de: ' . calcularEdad( '2001-05-01' );
 
 ?>
 
