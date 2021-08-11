@@ -59,6 +59,67 @@ $total = ($granTotal - $montoRetIVA) - $montoRetISR;
 printf( "<p>Monto: $%6.2f</p>", $total );
 
 
+echo '**************************//*******';
+echo '**************************//*******';
+
+
+$vida = [ 'fruta' => 'manzana', 'persona' =>  'hombre',  'animales' => [
+    'perro', 'gato', 'gallina'
+] ];
+
+$cadena = serialize( $vida );
+
+echo $cadena;
+
+
+class objeto1 {
+    public $valor1;
+}
+
+
+class objeto2 {
+    public $valor2;
+}
+
+
+$obj1 = new objeto1();
+$obj2 = new objeto2();
+
+
+$obj1->valor1 = 'gato';
+$obj2->valor2 = 'perro';
+
+$obj1s = serialize($obj1);
+$obj2s = serialize($obj2);
+
+$data = unserialize( $obj1s, [ 'allowed_classes'=>true ] );
+
+var_dump( $data );
+
+
+$cadena = "hola \"  todos  \" por <b> este gran dia </b>, <i> jajaja </i>  ";
+$a = htmlentities( $cadena );
+
+$b = html_entity_decode($a);
+
+echo '<br>';
+echo $a . '<br>';
+echo $b;
+
+$url = 'nombre=Jesus&Apellido=Miranda';
+
+foreach ( explode('&', $url ) as $cadena ) {
+    $p = explode( '=', $cadena );
+    if( $p ){
+        printf("El valor del parametro \"%s\" es \"%s\" <br>",
+        urldecode($p[0]) , urldecode( $p[1] ));
+    }
+}
+
+
+
+
+
 ?>
 
 
