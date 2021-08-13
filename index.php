@@ -117,8 +117,20 @@ foreach ( explode('&', $url ) as $cadena ) {
 }
 
 
+$cadena = " hola 'a todos', como 'estan' ";
 
+$cadena1 = addslashes( $cadena );
 
+$cadena2 = stripslashes( $cadena );
+
+echo $cadena1 . '   ';
+echo $cadena2;
+
+$html = '<p><Hola a todos</p>';
+$js = "<script>alert('hola mundo')</script>";
+
+echo htmlspecialchars( $html );
+echo strip_tags( $js );
 
 ?>
 
